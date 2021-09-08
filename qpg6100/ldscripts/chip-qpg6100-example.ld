@@ -30,6 +30,13 @@ SECTIONS
      * allow injection of custom values by programmer tool.
      */
     .native_user_license   0x4000000 + 0x10 : { KEEP(*(.native_user_license)); } > FLASH
+
+    /* Add the jumptable at this fixed location */
+    jumptable_start_offset = 0x800;
+    datajumptable_start_address  = ORIGIN(FLASH) + jumptable_start_offset;
+    flashjumptable_start_address = datajumptable_start_address + 0x40;
+    .datajumptable   datajumptable_start_address  :  {. = ALIGN(4); KEEP(*(.datajumptable));    } > FLASH
+    .flashjumptable  flashjumptable_start_address :  {. = ALIGN(4); KEEP(*(.flashjumptable));   } > FLASH
     .isr_vector : ALIGN(0x100) { KEEP(*(.isr_vector)); } > FLASH
 
     .text :

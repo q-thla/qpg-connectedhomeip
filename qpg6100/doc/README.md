@@ -65,9 +65,9 @@ Alternatively the SDK can be cloned separately
     cd ~
     git clone https://github.com/Qorvo/qpg-connectedhomeip
 
-and can be used in the Matter repository (instead of the pre-package submodule) by exporting
+and can be used in the Matter repository (instead of the pre-package submodule) by passing `qpg_sdk_root` when running gn:
 
-    export QPG6100_SDK_ROOT=~/qpg-connectedhomeip
+    gn gen --args="qpg_sdk_root=\"~/qpg-connectedhomeip\""
 
 ### Compilation
 
