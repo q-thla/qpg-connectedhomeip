@@ -20,8 +20,8 @@
  * INCIDENTAL OR CONSEQUENTIAL DAMAGES,
  * FOR ANY REASON WHATSOEVER.
  *
- * $Change: 182094 $
- * $DateTime: 2021/09/23 13:36:41 $
+ * $Change: 182752 $
+ * $DateTime: 2021/10/05 14:12:53 $
  */
 
 /** @file "qvCHIP.h"
@@ -109,6 +109,15 @@ void qvCHIP_RandomGet(uint8_t outputLength, uint8_t *pOutput);
 /** @brief Trigger system reset.
 */
 void qvCHIP_ResetSystem(void);
+
+/** @brief Return HEAP statistics.
+*
+*   @param pHeapFree                 HEAP currently free.
+*   @param pHeapUsed                 HEAP currently in use.
+*   @param pHighWatermark            Maximum HEAP used.
+*   @return result                   False if any parameter is NULL. True if parameters are ok
+*/
+bool qvCHIP_GetHeapStats(size_t* pHeapFree, size_t* pHeapUsed, size_t* pHighWatermark);
 
 #ifdef __cplusplus
 }

@@ -20,8 +20,8 @@
  * INCIDENTAL OR CONSEQUENTIAL DAMAGES,
  * FOR ANY REASON WHATSOEVER.
  *
- * $Change: 169169 $
- * $DateTime: 2021/03/19 08:48:13 $
+ * $Change: 182513 $
+ * $DateTime: 2021/09/30 22:08:35 $
  */
 
 /** @file "qvCHIP_NVM.h"
@@ -72,15 +72,6 @@ extern "C" {
 /** @brief Initialization of NVM memory used for CHIP
 */
 void qvCHIP_Nvm_Init(void);
-
-/** @brief Get maximum length of data identified by keyId
- *
- *  @param key      NVM identifier to fetch maximum length for.
- *  @param pKeyLen  return size of key
- *  @return         QV_STATUS_NO_ERROR - no error
- *                  QV_STATUS_INVALID_ARGUMENT - key not recognised
-*/
-qvStatus_t qvCHIP_Nvm_GetMaxKeyLen(uint16_t key, uint16_t* pKeyLen);
 
 /** @brief Backup data to NVM for a given key.
  *
