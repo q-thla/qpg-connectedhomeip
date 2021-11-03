@@ -144,7 +144,7 @@ SECTIONS
     __dyn_heap_start    = ALIGN(4);
     __dyn_heap_end      = ORIGIN(RAM) + LENGTH(RAM) - ALIGN(0x200,4);
     __dyn_heap_size     =  __dyn_heap_end - __dyn_heap_start;
-    ASSERT(__dyn_heap_size >= 0x8000, "HEAP too small")
+    ASSERT(__dyn_heap_size >= 0x2000, "HEAP too small")
     .heap   (NOLOAD) :    ALIGN(4)        { . = ALIGN(4); . += __dyn_heap_size; } > RAM
 
     /* End of memory to be retained */
