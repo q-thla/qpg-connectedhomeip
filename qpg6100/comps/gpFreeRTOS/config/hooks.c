@@ -50,6 +50,7 @@
 
 /* Standard includes. */
 #include <stdio.h>
+#include <stdlib.h>
 
 /* Kernel includes. */
 #include "FreeRTOS.h"
@@ -109,7 +110,7 @@ void vApplicationGetTimerTaskMemory(StaticTask_t **ppxTimerTaskTCBBuffer,
 {
     *ppxTimerTaskTCBBuffer = &xTimerTaskTCB;
     *ppxTimerTaskStackBuffer = uxTimerTaskStack;
-    *pxTimerTaskStackSize = sizeof(uxTimerTaskStack);
+    *pxTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
 }
 #endif
 
@@ -136,11 +137,12 @@ __weak void vApplicationIdleHook(void)
 #endif
 
 /*-----------------------------------------------------------*/
-#if (configCHECK_FOR_STACK_OVERFLOW == 1)
+#if (configCHECK_FOR_STACK_OVERFLOW > 0)
 void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
 {
     ( void ) pcTaskName;
     ( void ) pxTask;
+
 
     /* Run time stack overflow checking is performed if
     configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook
@@ -169,3 +171,15 @@ __weak void vApplicationTickHook(void)
     demonstrate using queue sets from an ISR. */
 }
 #endif
+
+#if (configGENERATE_RUN_TIME_STATS == 1)
+void vConfigureTimerForRunTimeStats( void )
+{
+  
+}
+
+uint32_t vGetTimerForRunTimeStats( void )
+{
+    return 0;
+}
+#endif /* configGENERATE_RUN_TIME_STATS */
