@@ -109,7 +109,7 @@ void vApplicationGetTimerTaskMemory(StaticTask_t **ppxTimerTaskTCBBuffer,
 {
     *ppxTimerTaskTCBBuffer = &xTimerTaskTCB;
     *ppxTimerTaskStackBuffer = uxTimerTaskStack;
-    *pxTimerTaskStackSize = sizeof(uxTimerTaskStack);
+    *pxTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
 }
 #endif
 
@@ -169,3 +169,15 @@ __weak void vApplicationTickHook(void)
     demonstrate using queue sets from an ISR. */
 }
 #endif
+
+#if (configGENERATE_RUN_TIME_STATS == 1)
+void vConfigureTimerForRunTimeStats( void )
+{
+  
+}
+#error Add implementation for timer
+uint32_t vGetTimerForRunTimeStats( void )
+{
+    return 0;
+}
+#endif /* configGENERATE_RUN_TIME_STATS */
