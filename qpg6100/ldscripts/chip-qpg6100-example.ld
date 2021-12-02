@@ -6,19 +6,21 @@
 MEMORY
 {
     /* Last 32 bytes of UCRAM in use by ROM bootloader stack. */
-    RAM  (rxw) : ORIGIN = 0x20008000, LENGTH = 0x17fe0
-    FLASH (rx) : ORIGIN = 0x4000000, LENGTH = 0x80000
+    /* FIXME - Sizes extended to patch fallout of force merged PR in CHIP repo */
+    /* https://github.com/project-chip/connectedhomeip/pull/12047 */
+    RAM  (rxw) : ORIGIN = 0x20008000, LENGTH = 0x17fe0+0x2000
+    FLASH (rx) : ORIGIN = 0x4000000, LENGTH = 0x80000+0x8000
     ROM   (rx) : ORIGIN = 0x04800000, LENGTH = 0x8000
 }
 
 SECTIONS
 {
-    eFLASH = 0x4080000;
+    eFLASH = 0x4080000+0x8000; /* FIXME - extended */
 
     sSYSRAM = 0x20008000;
     eSYSRAM = 0x20010000;
     sUCRAM  = 0x20010000;
-    eUCRAM  = 0x20020000;
+    eUCRAM  = 0x20020000+0x2000; /* FIXME - extended */
 
     /* Linkerscript only for contiguous SYS and UCRAM */
     ASSERT(eSYSRAM == sUCRAM, "Non contiguous SYS and UCRAM")
