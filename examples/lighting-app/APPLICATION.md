@@ -1,11 +1,11 @@
-# Matter QPG6100 Lighting Example Application
+# Matter QPG6105 Lighting Example Application
 
 An example application showing the use of
-[Matter](https://github.com/project-chip/connectedhomeip) on the Qorvo QPG6100.
+[Matter](https://github.com/project-chip/connectedhomeip) on the Qorvo QPG6105.
 
 ---
 
-- [Matter QPG6100 Lighting Example Application](#matter-qpg6100-lighting-example-application)
+- [Matter QPG6105 Lighting Example Application](#matter-qpg6105-lighting-example-application)
   - [Lighting-app](#lighting-app)
     - [Build and program](#build-and-program)
     - [Button control](#button-control)
@@ -17,15 +17,15 @@ An example application showing the use of
 
 ## Lighting-app
 
-The QPG6100 Lighting-app shows an implementation of a Lighting device, based on
-Matter and the Qorvo QPG6100 SDK. Intention of this example is to demonstrate a Matter
+The QPG6105 Lighting-app shows an implementation of a Lighting device, based on
+Matter and the Qorvo QPG6105 SDK. Intention of this example is to demonstrate a Matter
 device, with Thread connectivity, using Bluetooth Low Energy to perform Matter provisioning.
 
 ### Build and program
 
 Building and programming instruction can be found on the platform specific page for
 
-- [QPG6100](../../qpg6100/doc/README.md)
+- [QPG6105](../../qpg6105/doc/README.md)
 
 ### Button control
 
@@ -57,7 +57,7 @@ The following LEDs are used during the application:
 
 ### Logging Output
 
-See [View Logging Output](../../qpg6100/doc/README.md#view-logging-output)
+See [View Logging Output](../../qpg6105/doc/README.md#view-logging-output)
 
 At startup you will see:
 
