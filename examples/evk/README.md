@@ -33,8 +33,6 @@ The CHIP Evaluation Kit contains the following hardware:
 * QPG6105 DK board, flashed with a CHIP Light application.
 * QR code pointing to the quickstart guide
 
-Note: the images referring to QPG6105DK are currently depicting a QPG6100DK and will be soon updated.
-
 This Evaluation kit will allow you to control a CHIP Light device implemented
 on the QPG6105 DK board using a WiFi connected Android™ device via the QPG7015M
 DK that implements a Thread Border Router:
@@ -56,7 +54,7 @@ Next to the CHIP Evaluation Kit, the user has to obtain the following items:
 
 ### Computer and QPG6105 DK board setup
 
-Use the supplied micro USB cable to connect the QPG6105DK board's micro USB connector (marked on the photo with a white circle) to a USB port of the computer.
+Use the supplied USB cable to connect the QPG6105DK board's USB-C connector (marked on the photo with a red circle) to a USB port of the computer.
 
 ![Power QPG6105 DK](./imgs/qpg6105_power.png "Power QPG6105 DK")
 
@@ -136,9 +134,9 @@ The QPG6105 DK provided with this kit ships ready to be commissioned. If you alr
 
 - Recall the PuTTY application showing the serial output of the QPG6105 DK
 
-- Push the reset button on the QPG6105DK board (marked with a white rectangle in the photo) to have the device show its start-up messages again.
+- Push the reset button on the QPG6105DK board (marked with a red circle in the photo) to have the device show its start-up messages again.
 
-![Power QPG6105 DK](./imgs/qpg6105_power.png "Power QPG6105 DK")
+![QPG6105 DK board reset](./imgs/qpg6105_reset.png "QPG6105 DK board reset")
 
 - Locate and highlight (using the mouse) the URL that is displayed. The selected text will be copied into the copy/paste buffer.
 
@@ -194,7 +192,7 @@ The serial output will show:
 
 After the board is reset it will start commissioning again.
 
-![QPG6105 DK board reset](./imgs/qpg6105_reset.png "QPG6105 DK board reset")
+![QPG6105 DK factory reset](./imgs/qpg6105_sw5.png "QPG6105 DK factory reset")
 
 ### QPG7015M development kit
 

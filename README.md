@@ -8,8 +8,6 @@ which can be found under:
 
 [https://github.com/project-chip/connectedhomeip](https://github.com/project-chip/connectedhomeip)
 
-Note: the images referring to QPG6105DK are currently depicting a QPG6100DK and will be soon updated.
-
 ## Supported platforms
 
 * QPG6105
@@ -21,7 +19,7 @@ All files required are stored in this repository under
 ./qpg6105
 ```
 
-![QPG6105 DK board](qpg6105/doc/qpg6100.png)
+![QPG6105 DK board](qpg6105/doc/qpg6105.png)
 
 * QPG7015M
 
