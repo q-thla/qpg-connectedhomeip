@@ -3,8 +3,8 @@
 import sys
 import os
 
-def extract_vid_and_pid(chip_root):
-    filename = "{}/examples/platform/qpg/project_include/CHIPProjectConfig.h".format(chip_root)
+def extract_vid_and_pid(chip_root, project_name):
+    filename = "{}/examples/{}/qpg/include/CHIPProjectConfig.h".format(chip_root, project_name)
     vid = None
     pid = None
     with open(filename, 'r') as config_file:
@@ -22,7 +22,16 @@ def extract_vid_and_pid(chip_root):
     return vid, pid
         
 def exec_image_tool(chip_root, in_file, out_file, vn, vs):
-    vid, pid = extract_vid_and_pid(chip_root)
+
+    if 'lighting' in in_file:
+        project_name = 'lighting-app'
+    elif 'lock' in in_file:
+        project_name = 'lock-app'
+    elif 'persistent' in in_file:
+        project_name = 'persistent-storage'
+    elif 'shell' in in_file:
+        project_name = 'shell'
+    vid, pid = extract_vid_and_pid(chip_root, project_name)
     args = "create -v {} -p {} -vn {} -vs {} -da sha256".format(vid, pid, vn, vs)
     cmd = "{}/src/app/ota_image_tool.py {} {} {}".format(chip_root, args, in_file, out_file)
     os.system(cmd)
@@ -35,8 +44,7 @@ def main():
         
     chip_root = sys.argv[1]
     in_hex = sys.argv[2]
-    out_ota = sys.argv[3]    
-    
+    out_ota = sys.argv[3]
     exec_image_tool(chip_root, in_hex, out_ota, 1, "1.0")
         
 if __name__ == "__main__":
