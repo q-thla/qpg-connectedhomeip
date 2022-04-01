@@ -99,7 +99,7 @@ typedef uint8_t                             qvCHIP_OtaStatus_t;
 /** @pointer to function qvCHIP_OtaUpgradeHandledCback_t
  *  @brief Application API: Pointer to callback for upgrade complete.
 */
-typedef void (*qvCHIP_OtaUpgradeHandledCback_t)(bool upgradeHandled, qvCHIP_OtaStatus_t upgradeStatus); 
+typedef void (*qvCHIP_OtaUpgradeHandledCback_t)(bool upgradeHandled, qvCHIP_OtaStatus_t upgradeStatus);
 
 /** @pointer to function qvCHIP_OtaEraseCompleteCback_t
  *  @brief Application API: Pointer to callback for erase complete.
@@ -189,7 +189,7 @@ void qvCHIP_OtaSetCrc(uint32_t crcValue);
 */
 qvCHIP_OtaStatus_t qvCHIP_OtaSetPendingImage(uint32_t swVer, uint32_t hwVer, uint32_t startAddr, uint32_t imgSz);
 
-/** @brief Application API: this function stores an application callback to be 
+/** @brief Application API: this function stores an application callback to be
  *  invoked when the initialisation is done if an upgrade is handled.
 *
 *   The callback informs the application of the result of the update.
